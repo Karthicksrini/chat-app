@@ -7,7 +7,7 @@ const clients = new Map();
 const PORT = 5000;
 // Use Render Redis URL if available, else fallback to localhost
 const redisClient = Redis.createClient({
-  url: process.env.REDIS_URL || "redis://localhost:6379",
+  url: "https://chat-app-gid8.onrender.com",
 });
 
 redisClient.connect();
