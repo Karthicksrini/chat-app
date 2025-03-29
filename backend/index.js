@@ -5,10 +5,7 @@ const server = http.createServer();
 const wss = new WebSocket.Server({ server });
 const clients = new Map();
 const PORT = 5000;
-// Use Render Redis URL if available, else fallback to localhost
-const redisClient = Redis.createClient({
-  url: "https://chat-app-gid8.onrender.com",
-});
+const redisClient = Redis.createClient();
 
 redisClient.connect();
 
