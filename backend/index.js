@@ -5,8 +5,11 @@ const server = http.createServer();
 const wss = new WebSocket.Server({ server });
 const clients = new Map();
 const PORT = 5000;
-// Initialize Redis client
-const redisClient = Redis.createClient();
+// Use Render Redis URL if available, else fallback to localhost
+const redisClient = Redis.createClient({
+  url: process.env.REDIS_URL || "redis://localhost:6379",
+});
+
 redisClient.connect();
 
 redisClient.on("error", (err) => console.error("Redis Error:", err));
