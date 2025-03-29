@@ -4,7 +4,7 @@ const Redis = require("redis");
 const server = http.createServer();
 const wss = new WebSocket.Server({ server });
 const clients = new Map();
-const PORT = 5000;
+const PORT = 8080;
 const redisClient = Redis.createClient();
 
 redisClient.connect();
